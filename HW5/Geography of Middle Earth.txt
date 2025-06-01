@@ -1,0 +1,82 @@
+east(gondor, mordor).
+north(rohan, gondor).
+near(gondor, mordor).
+near(gondor, rohan).
+near(rohan, lothlorien).
+south(rohan, lothlorien).
+near(lothlorien, moria).
+east(lothlorien, moria).
+south(moria, high_pass).
+near(moria, high_pass).
+west(rivendell, high_pass).
+near(rivendell, high_pass).
+east(rivendell, bree).
+near(rivendell, bree).
+east(bree, shire).
+near(shire, bree).
+
+% Symmetry rules
+near(B, A) => near(A, B).
+south(B, A) => north(A, B).
+north(B, A) => south(A, B).
+west(B, A) => east(A, B).
+east(B, A) => west(A, B).
+
+% Transitivity rules for directions
+north(A, C) => north(A, B) & north(B, C).
+south(A, C) => south(A, B) & south(B, C).
+east(A, C) => east(A, B) & east(B, C).
+west(A, C) => west(A, B) & west(B, C).
+
+north(A, C) => north(A, B) & east(B, C).
+south(A, C) => south(A, B) & east(B, C).
+
+
+
+
+% RESULT FOR
+east(shire, mordor) => $ans(true).
+
+result: proof found
+
+answer: $ans(true).
+proof:
+ 1: [in] -east(shire,mordor) | $ans(true).
+ 2: [in] east(X,Y).
+ 3: [mp, 1, 2] $ans(true).
+
+
+% RESULT FOR
+south(shire, mordor) => $ans(true).
+
+result: proof found
+
+answer: $ans(true).
+proof:
+ 1: [in] -south(shire,mordor) | $ans(true).
+ 2: [in] south(X,Y).
+ 3: [mp, 1, 2] $ans(true).
+
+
+% RESULT FOR
+west(shire, mordor) => $ans(false).
+
+result: proof found
+
+answer: $ans(false).
+proof:
+ 1: [in] -west(shire,mordor) | $ans(false).
+ 2: [in] west(X,Y).
+ 3: [mp, 1, 2] $ans(false).
+
+
+% RESULT FOR
+north(shire, mordor) => $ans(false).
+
+result: proof found
+
+answer: $ans(false).
+proof:
+ 1: [in] -north(shire,mordor) | $ans(false).
+ 2: [in] north(X,Y).
+ 3: [mp, 1, 2] $ans(false).
