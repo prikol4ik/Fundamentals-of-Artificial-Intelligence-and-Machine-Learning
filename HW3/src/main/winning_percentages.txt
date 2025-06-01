@@ -1,0 +1,36 @@
+winning percentage for current position:
+column 0: 57.5
+column 1: 65.5
+column 2: 66.0
+column 3: 79.0
+column 4: 70.5
+column 5: 68.0
+column 6: 60.0
+
+winning percentage for current position:
+column 0: 69.0
+column 1: 87.0
+column 2: 77.0
+column 3: 83.0
+column 4: 93.0
+column 5: 75.0
+column 6: 81.5
+
+winning percentage for current position:
+column 0: 80.5
+column 1: 81.5
+column 2: 94.0
+column 3: 89.0
+column 4: 85.0
+column 5: 85.0
+column 6: 82.0
+
+winning percentage for current position:
+column 0: 92.0
+column 1: 100.0
+column 2: 93.0
+column 3: 97.0
+column 4: 93.0
+column 5: 100.0
+column 6: 95.0
+
